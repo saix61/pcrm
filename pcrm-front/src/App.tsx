@@ -1,7 +1,18 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 
-function formatISODate(dateString) {
+export type TUser = {
+  name: string;
+  surname: string;
+  plan: {
+    name: string;
+    description: string;
+  };
+  plan_date_start: string;
+  plan_date_end: string;
+};
+
+function formatISODate(dateString: string) {
   const date = new Date(dateString);
   return date.toLocaleString("ru-RU", {
     year: "numeric",
@@ -11,7 +22,7 @@ function formatISODate(dateString) {
 }
 
 function App() {
-  const [user, setUser] = useState<{ name: string } | null>(null);
+  const [user, setUser] = useState<TUser | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   const [username, setUsername] = useState("");
@@ -65,7 +76,7 @@ function App() {
         <div>
           <table>
             <tr>
-              <th colspan="2">
+              <th colSpan={2}>
                 <h1>Информация об аккаунте</h1>
               </th>
             </tr>
@@ -100,40 +111,16 @@ function App() {
             {user.plan.description && (
               <>
                 <tr>
-                  <td colspan="2">
+                  <td colSpan={2}>
                     <h3>Описание плана:</h3>
                   </td>
                 </tr>
                 <tr>
-                  <td colspan="2">{user.plan.description}</td>
+                  <td colSpan={2}>{user.plan.description}</td>
                 </tr>
               </>
             )}
           </table>
-          <h1>Информация об аккаунте</h1>
-          <h2>{`${user.name} ${user.surname}`}</h2>
-          <div>
-            <b>План:</b> {user.plan.name}
-          </div>
-
-          {user.plan.name !== "Деактивирован" && user.plan_date_start && (
-            <div>
-              <b>Дата активации:</b> {formatISODate(user.plan_date_start)}
-            </div>
-          )}
-
-          {user.plan.name != "Деактивирован" && user.plan_date_end && (
-            <div>
-              <b>Действует до:</b> {formatISODate(user.plan_date_end)}
-            </div>
-          )}
-
-          {user.plan.description && (
-            <>
-              <h3>Описание плана:</h3>
-              <div>{user.plan.description}</div>
-            </>
-          )}
           <br />
           <button onClick={handleLogout}>Выйти</button>
         </div>
