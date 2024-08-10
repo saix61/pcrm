@@ -32,7 +32,8 @@ services:
 
   front:
     build:
-      context: ./pcrm-front
+      context: ./
+      dockerfile: ./pcrm-front/Dockerfile
     depends_on:
       - admin
     networks:

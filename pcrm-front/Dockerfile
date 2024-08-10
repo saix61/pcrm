@@ -1,11 +1,12 @@
 FROM node:alpine as base
 WORKDIR /home/node/pcrm-front
-COPY package*.json ./
+COPY ./pcrm-front/package*.json ./
 
 FROM base as builder
 
 RUN npm ci
-COPY . .
+COPY ./pcrm-front/. .
+COPY payload-types.d.ts ../
 RUN npm run build
 
 FROM base as runtime
