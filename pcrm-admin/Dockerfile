@@ -16,7 +16,6 @@ FROM base as runtime
 COPY --from=builder /home/node/pcrm-admin/dist ./dist
 COPY --from=builder /home/node/pcrm-admin/build ./build
 
-ENV DATABASE_URI=mongodb://mongodb/
 ENV NODE_ENV=production
 ENV PAYLOAD_CONFIG_PATH=dist/payload.config.js
 
