@@ -15,7 +15,7 @@ FROM base as runtime
 
 COPY --from=builder /home/node/app/dist ./dist
 COPY --from=builder /home/node/app/build ./build
-COPY .env ./
+COPY ../.env ./
 
 ENV DATABASE_URI=mongodb://mongodb/
 ENV NODE_ENV=production
