@@ -1,0 +1,25 @@
+.AuthPage {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  text-align: center;
+  padding: 32px;
+}
+.AuthPage form {
+  width: 360px;
+  max-width: 100%;
+}
+
+.AuthPage-Logo {
+  margin-bottom: 32px;
+  color: #fff;
+}
+
+.AuthPage-InputLabel {
+  margin-bottom: 16px;
+}
+
+.AuthPage-Button {
+  margin-top: 32px;
+  width: 100%;
+}

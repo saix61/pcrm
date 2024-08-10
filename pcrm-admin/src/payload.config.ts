@@ -25,7 +25,7 @@ export default buildConfig({
   editor: slateEditor({}),
   collections: [Products, Users],
   typescript: {
-    outputFile: path.resolve(__dirname, "payload-types.ts"),
+    outputFile: path.resolve(__dirname, "../../payload-types.d.ts"),
   },
   graphQL: {
     schemaOutputFile: path.resolve(__dirname, "generated-schema.graphql"),

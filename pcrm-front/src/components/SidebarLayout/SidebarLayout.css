@@ -1,0 +1,33 @@
+.SidebarLayout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.SidebarLayout-Aside {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 16px 16px;
+  max-height: 100%;
+  flex-basis: 300px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.SidebarLayout-AsideContent {
+  flex: 1;
+  overflow: auto;
+}
+
+.SidebarLayout-Section {
+  flex: 1;
+}
+
+.EmptyPage {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.1;
+  padding: 32px 16px;
+}

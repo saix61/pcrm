@@ -1,0 +1,53 @@
+.Aside {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.Aside-Logo {
+  padding: 8px 0;
+  display: block;
+}
+
+.Aside-Content {
+  flex: 1;
+  overflow: auto;
+}
+
+.Aside-Nav {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 0;
+}
+
+.Aside-Nav a {
+  font-size: 16px;
+  padding: 4px 8px;
+}
+
+.Aside-Nav a::before {
+  content: "- ";
+}
+
+.Aside-Nav a[aria-disabled] {
+  opacity: 0.4;
+  color: #fff;
+}
+
+.Aside-CallbackBox {
+  padding: 24px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  margin: 16px 0;
+}
+
+.Aside-CallbackBoxTitle {
+  opacity: 0.4;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.Aside-CallbackBoxLink {
+  font-size: 16px;
+}
