@@ -15,7 +15,8 @@ FROM base as runtime
 
 COPY --from=builder /home/node/pcrm-admin/dist ./dist
 COPY --from=builder /home/node/pcrm-admin/build ./build
-# COPY .env ./
+
+COPY .env.dockercompose ./.env
 
 ENV NODE_ENV=production
 ENV PAYLOAD_CONFIG_PATH=dist/payload.config.js

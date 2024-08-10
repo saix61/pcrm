@@ -39,6 +39,7 @@ export interface User {
   plan?: (string | null) | Product;
   plan_date_start?: string | null;
   plan_date_end?: string | null;
+  additional?: string | null;
   updatedAt: string;
   createdAt: string;
   email: string;

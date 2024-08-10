@@ -73,6 +73,11 @@ const Users: CollectionConfig = {
       name: "plan_date_end",
       label: "Дата окончания",
     },
+    {
+      type: "textarea",
+      name: "additional",
+      label: "Доп. Информация",
+    },
   ],
 };
 

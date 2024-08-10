@@ -73,12 +73,13 @@ const PersonalPage = () => {
     [user]
   );
 
-  const TFoot = useMemo(() => {
+  const PlanDescription = useMemo(() => {
     return (
       user &&
       user.plan &&
-      typeof user.plan !== "string" && (
-        <tfoot>
+      typeof user.plan !== "string" &&
+      user.plan.description && (
+        <tbody>
           <tr>
             <td colSpan={2}>
               <br />
@@ -87,6 +88,25 @@ const PersonalPage = () => {
           </tr>
           <tr>
             <td colSpan={2}>{user.plan.description}</td>
+          </tr>
+        </tbody>
+      )
+    );
+  }, [user]);
+
+  const TFoot = useMemo(() => {
+    return (
+      user &&
+      user.additional && (
+        <tfoot>
+          <tr>
+            <td colSpan={2}>
+              <br />
+              <h3>Доп. Информация:</h3>
+            </td>
+          </tr>
+          <tr>
+            <td colSpan={2}>{user.additional}</td>
           </tr>
         </tfoot>
       )
@@ -103,6 +123,7 @@ const PersonalPage = () => {
               {PersonalInfo}
               {Plan}
             </tbody>
+            {PlanDescription}
             {TFoot}
           </table>
         </div>
