@@ -86,38 +86,42 @@ function App() {
               </td>
               <td>{`${user.name} ${user.surname}`}</td>
             </tr>
-            <tr>
-              <td>
-                <b>План:</b>
-              </td>
-              <td>{user.plan.name}</td>
-            </tr>
-            {user.plan.name !== "Деактивирован" && user.plan_date_start && (
-              <tr>
-                <td>
-                  <b>Дата активации:</b>
-                </td>
-                <td>{formatISODate(user.plan_date_start)}</td>
-              </tr>
-            )}
-            {user.plan.name !== "Деактивирован" && user.plan_date_end && (
-              <tr>
-                <td>
-                  <b>Действует до:</b>
-                </td>
-                <td>{formatISODate(user.plan_date_end)}</td>
-              </tr>
-            )}
-            {user.plan.description && (
+            {user.plan && (
               <>
                 <tr>
-                  <td colSpan={2}>
-                    <h3>Описание плана:</h3>
+                  <td>
+                    <b>План:</b>
                   </td>
+                  <td>{user.plan.name}</td>
                 </tr>
-                <tr>
-                  <td colSpan={2}>{user.plan.description}</td>
-                </tr>
+                {user.plan.name !== "Деактивирован" && user.plan_date_start && (
+                  <tr>
+                    <td>
+                      <b>Дата активации:</b>
+                    </td>
+                    <td>{formatISODate(user.plan_date_start)}</td>
+                  </tr>
+                )}
+                {user.plan.name !== "Деактивирован" && user.plan_date_end && (
+                  <tr>
+                    <td>
+                      <b>Действует до:</b>
+                    </td>
+                    <td>{formatISODate(user.plan_date_end)}</td>
+                  </tr>
+                )}
+                {user.plan.description && (
+                  <>
+                    <tr>
+                      <td colSpan={2}>
+                        <h3>Описание плана:</h3>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colSpan={2}>{user.plan.description}</td>
+                    </tr>
+                  </>
+                )}
               </>
             )}
           </table>

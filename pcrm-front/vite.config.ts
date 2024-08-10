@@ -7,9 +7,8 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "http://localhost:3000", // адрес вашего бэкенда
+        target: "http://localhost:3100", // адрес вашего бэкенда
         changeOrigin: true,
-        // rewrite: (path) => path.replace(/^\/api/, ""), // удаляет /api из пути
       },
     },
   },
