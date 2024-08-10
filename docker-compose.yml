@@ -29,8 +29,6 @@ services:
       - mongodb
     networks:
       - dokploy-network
-    environment:
-      - ENV_FILE=${ENV_FILE:-.env}
 
   front:
     build:

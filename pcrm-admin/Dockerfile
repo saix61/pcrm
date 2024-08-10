@@ -1,6 +1,6 @@
 # Base stage for common dependencies
 FROM node:18.8-alpine as base
-WORKDIR /home/node/app
+WORKDIR /home/node/pcrm-admin
 COPY package*.json ./
 COPY yarn.lock ./
 
@@ -13,8 +13,8 @@ RUN yarn build
 # Runtime stage for the final image
 FROM base as runtime
 
-COPY --from=builder /home/node/app/dist ./dist
-COPY --from=builder /home/node/app/build ./build
+COPY --from=builder /home/node/pcrm-admin/dist ./dist
+COPY --from=builder /home/node/pcrm-admin/build ./build
 
 ENV DATABASE_URI=mongodb://mongodb/
 ENV NODE_ENV=production
