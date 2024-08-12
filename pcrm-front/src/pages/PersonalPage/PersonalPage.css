@@ -1,15 +1,38 @@
 .PersonalPage {
   padding: 32px 16px;
+  max-width: 100%;
 }
 
 .PersonalPage table {
-  width: 100%;
-  max-width: 680px;
+  width: 680px;
+  max-width: 100%;
+  overflow: auto;
+  display: block;
+}
+
+.PersonalPage thead {
+  display: block;
+  overflow: auto;
+}
+
+.PersonalPage tbody {
+  display: block;
+  overflow: auto;
+}
+
+.PersonalPage tfoot {
+  display: block;
+}
+
+.PersonalPage tr {
+  display: flex;
 }
 
 .PersonalPage td {
   padding: 8px 16px;
   font-size: 16px;
+  flex: 1;
+  word-break: break-word;
 }
 
 .PersonalPage tr:not(:last-child) td {
@@ -18,4 +41,17 @@
 
 .PersonalPage td span {
   opacity: 0.4;
+}
+
+@media (max-width: 1024px) {
+  .PersonalPage td {
+    font-size: 14px;
+  }
+  .PersonalPage thead td {
+    font-size: 12px;
+    flex: 3;
+  }
+  .PersonalPage thead td:nth-child(2n) {
+    flex: 5;
+  }
 }

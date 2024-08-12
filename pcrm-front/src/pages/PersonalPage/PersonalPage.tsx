@@ -119,10 +119,10 @@ const PersonalPage = () => {
         <div className="PersonalPage">
           <h1>Информация об аккаунте</h1>
           <table>
-            <tbody>
+            <thead>
               {PersonalInfo}
               {Plan}
-            </tbody>
+            </thead>
             {PlanDescription}
             {TFoot}
           </table>
